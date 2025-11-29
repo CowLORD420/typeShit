@@ -351,20 +351,26 @@ body::-webkit-scrollbar {
     animation: none;
   }
 
-   .Button.irresistible button {
-    font-size: 1.8rem;   /* smaller but still noticeable */
-    height: 5rem;        /* shorter so it fits */
-    padding: 0.5rem 1rem; /* reduce padding to fit text */
+  .Button.irresistible button {
+    font-size: 1.8rem;        /* smaller font */
+    height: auto;             /* auto height so it fits text */
+    min-height: 5rem;         /* ensures a nice tappable size */
+    padding: 1rem 2rem;       /* enough padding for text */
+    width: 90%;               /* responsive width */
+    max-width: 400px;         /* optional max so it doesn’t stretch too far */
+    display: block;           /* ensures block centering */
+    margin: 0 auto;           /* center horizontally */
+    text-align: center;       /* center text inside */
   }
 
   .Button.irresistible button:hover {
-    transform: scale(1.1); /* slightly less extreme scale */
+    transform: scale(1.1);
   }
 
   .Button.irresistible button:active {
     transform: scale(1.05) rotate(-1deg);
   }
-}
+
 
   .question {
     font-size: 2.9em;

@@ -350,42 +350,61 @@ body::-webkit-scrollbar {
   body, html {
     animation: none;
   }
+
   body {
   position: relative;
   overflow-x: hidden;
+  }
+  
+  .quiz-menu {
+  min-height: 100vh;            /* full screen */
+  display: flex;
+  justify-content: center;      /* center horizontally */
+  align-items: center;          /* center vertically */
+  position: relative;
+  overflow: hidden;             /* hide shapes overflow */
+  padding: 20px;                /* breathing room */
 }
 
-.bg-shape {
+  .bg-shape {
   position: absolute;
-  border-radius: 50%;
-  filter: blur(40px);
-  opacity: 0.7;
   z-index: -1;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.45;
 }
 
+/* Different shapes */
 .bg1 {
-  width: 250px;
-  height: 250px;
-  background: #ff8ac8;
-  top: -50px;
-  left: -60px;
+  width: 60vw;
+  height: 60vw;
+  background: #ff9cd6;
+  top: -20%;
+  left: -10%;
 }
 
 .bg2 {
-  width: 300px;
-  height: 300px;
-  background: #ffd6f0;
-  bottom: 80px;
-  right: -80px;
+  width: 50vw;
+  height: 50vw;
+  background: #ffc8dd;
+  bottom: 10%;
+  right: -15%;
 }
 
 .bg3 {
-  width: 200px;
-  height: 200px;
-  background: #ff9bd6;
-  bottom: 10%;
-  left: 10%;
+  width: 40vw;
+  height: 40vw;
+  background: #ffb3c1;
+  top: 30%;
+  right: 5%;
 }
+
+
+  .buttons.single-quiz {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 
 
   /* Center container content vertically */

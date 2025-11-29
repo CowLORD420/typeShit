@@ -392,16 +392,21 @@ body::-webkit-scrollbar {
   }
 
   /* Irresistible button adjustments */
+  /* Mobile adjustments for irresistible button */
+
   .Button.irresistible button {
-    font-size: 2.2rem;            /* bigger than before for balance */
-    height: 6rem;
-    padding: 1rem 1.8rem 1rem;
-    width: 90%;
+    font-size: 2.2rem;        /* large enough to match question */
+    height: auto;             /* adapt to content */
+    min-height: 6rem;         /* tappable minimum */
+    padding: 0.8rem 2rem;     /* more horizontal padding for text */
+    width: 90%;               /* responsive width */
     max-width: 350px;
-    margin: 0 auto;
     display: block;
+    margin: 0 auto;
     text-align: center;
+    box-sizing: border-box;   /* ensures padding doesn’t exceed width */
   }
+
 
   .Button.irresistible button:hover {
     transform: scale(1.08); 

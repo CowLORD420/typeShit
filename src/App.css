@@ -17,6 +17,11 @@ body, html {
   background-attachment: fixed;
 }
 
+body::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* optional: make scrollbar transparent */
+}
+
 @keyframes gradientShift {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -61,14 +66,31 @@ body, html {
   pointer-events: none;
 }
 
+/* Themed, playful heading */
 .question {
-  font-family: 'Dancing Script', cursive;
-  font-weight: 650;
-  font-size: 4em;
-  color: var(--pink);
+  font-family: 'Dancing Script', cursive;   /* elegant, slightly playful */
+  font-weight: 600;                         /* less exaggerated than 700+ */
+  font-size: 3.8rem;                        /* large but not overwhelming */
   text-align: center;
-  margin: 20px;
+  margin: 0 20px 40px 20px;
+  
+  /* Soft pastel gradient for text */
+  background: linear-gradient(90deg, #ff83b3, #ff5998);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  /* Soft shadow for readability */
+  text-shadow: 0 2px 6px rgba(255, 105, 180, 0.3);
 }
+
+/* Slightly smaller on mobile */
+@media (max-width: 768px) {
+  .question {
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+  }
+}
+
 
 /* === Buttons === */
 .buttons {
@@ -78,6 +100,83 @@ body, html {
   width: 100%;
   max-width: 600px;
 }
+
+/* Center quiz menu vertically + horizontally */
+.quiz-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  gap: 50px;
+  padding: 0 20px;
+}
+
+/* Single huge irresistible button */
+.buttons.single-quiz {
+  width: 95%;       /* almost full width */
+  max-width: 700px; /* optional max */
+}
+
+.Button.irresistible button {
+  font-size: 3rem;       /* HUGE text */
+  height: 9rem;          /* TALL button */
+  border-radius: 50px;   /* super rounded */
+  font-weight: 900;
+  background: linear-gradient(135deg, #ff83b3, #ff5998, #ff83b3);
+  color: white;
+  text-shadow: 0 0 15px #fff5, 0 0 30px #ff83b3aa;
+  border: none;
+  box-shadow:
+    0 0 30px rgba(255, 105, 180, 0.6),
+    0 0 60px rgba(255, 83, 179, 0.5),
+    0 15px 50px rgba(255, 105, 180, 0.3);
+  animation: pulseGlow 2s infinite, floatY 3s ease-in-out infinite;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
+}
+
+/* Pulse and float animation */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow:
+      0 0 30px rgba(255, 105, 180, 0.6),
+      0 0 60px rgba(255, 83, 179, 0.5),
+      0 15px 50px rgba(255, 105, 180, 0.3);
+  }
+  50% {
+    box-shadow:
+      0 0 50px rgba(255, 105, 180, 0.8),
+      0 0 80px rgba(255, 83, 179, 0.7),
+      0 20px 60px rgba(255, 105, 180, 0.4);
+  }
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Hover */
+.Button.irresistible button:hover {
+  transform: scale(1.15); /* BIGGER when hovered */
+  background: linear-gradient(135deg, #ff5998, #ead6de, #ff5998);
+  color: #f45693;
+  box-shadow:
+    0 0 60px rgba(255, 105, 180, 0.9),
+    0 0 100px rgba(255, 83, 179, 0.8),
+    0 20px 70px rgba(255, 105, 180, 0.5);
+  cursor: pointer;
+}
+
+/* Active press */
+.Button.irresistible button:active {
+  transform: scale(1.1) rotate(-1deg);
+  box-shadow:
+    0 0 70px rgba(255, 105, 180, 1),
+    0 0 120px rgba(255, 83, 179, 0.9),
+    0 25px 80px rgba(255, 105, 180, 0.6);
+}
+
 
 .Button button {
   font-family: 'Quicksand', sans-serif;

@@ -1,5 +1,3 @@
-
-
 function Buttons({ choice, onClick, className = "" }) {
   return (
     <div className={`Button ${className}`}>
@@ -7,4 +5,5 @@ function Buttons({ choice, onClick, className = "" }) {
     </div>
   );
 }
-  export default Buttons;
+
+export default Buttons;

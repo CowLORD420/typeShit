@@ -398,7 +398,7 @@ body::-webkit-scrollbar {
     font-size: 2.2rem;        /* large enough to match question */
     height: auto;             /* adapt to content */
     min-height: 6rem;         /* tappable minimum */
-    padding: 0.8rem 2rem;     /* more horizontal padding for text */
+    padding: 1.5rem 3rem;     /* more horizontal padding for text */
     width: 90%;               /* responsive width */
     max-width: 350px;
     display: block;

@@ -351,6 +351,21 @@ body::-webkit-scrollbar {
     animation: none;
   }
 
+   .Button.irresistible button {
+    font-size: 1.8rem;   /* smaller but still noticeable */
+    height: 5rem;        /* shorter so it fits */
+    padding: 0.5rem 1rem; /* reduce padding to fit text */
+  }
+
+  .Button.irresistible button:hover {
+    transform: scale(1.1); /* slightly less extreme scale */
+  }
+
+  .Button.irresistible button:active {
+    transform: scale(1.05) rotate(-1deg);
+  }
+}
+
   .question {
     font-size: 2.9em;
     margin: 5px 10px 50px;

@@ -382,14 +382,19 @@ body::-webkit-scrollbar {
   }
 
 
-  .question {
-    font-size: 2.9em;
-    margin: 5px 10px 50px;
+   .question {
+    font-size: clamp(1.8rem, 6vw, 2.5rem); /* responsive font size */
+    line-height: 1.2;                     /* tighter line spacing */
+    margin: 10px 15px 30px 15px;          /* adjust spacing above button */
+    word-wrap: break-word;                /* prevent overflow */
+    hyphens: auto;                        /* optional for long words */
   }
 
   .question-container {
-    margin-bottom: 40px;
+    text-align: center;                   /* ensure centered */
+    width: 100%;                          /* full container width */
   }
+
 
   .Button button {
     height: 3.6rem;

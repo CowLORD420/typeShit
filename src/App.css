@@ -361,7 +361,17 @@ body::-webkit-scrollbar {
   }
 
   /* Scale down the button and make it responsive */
- 
+  .Button.irresistible button {
+    font-size: 1.8rem;        /* smaller text */
+    height: auto;             /* auto height to fit content */
+    min-height: 5rem;         /* tappable minimum */
+    padding: 1rem 1.5rem;     /* reduce padding for smaller screens */
+    width: 90%;               /* responsive width */
+    max-width: 350px;         /* optional max width */
+    display: block;           /* ensure centering */
+    margin: 0 auto;           /* horizontally centered */
+    text-align: center;       /* center text inside button */
+  }
 
   /* Adjust hover/active transforms for smaller button */
   .Button.irresistible button:hover {
@@ -373,36 +383,13 @@ body::-webkit-scrollbar {
 
 
   .question {
-    font-size: 2.6rem;             /* still large, readable */
-    line-height: 1.2;              /* tighter for mobile */
-    margin: 20px 15px 35px 15px;   /* spacing above button */
-    text-align: center;             /* center the text */
-    word-wrap: break-word;
-  }
-
-  /* Optional: adjust container to balance spacing */
-  .container {
-    padding: 20px 15px;
-    justify-content: flex-start;    /* avoid excessive vertical spacing */
+    font-size: 2.9em;
+    margin: 5px 10px 50px;
   }
 
   .question-container {
-    width: 100%;                    /* ensure full width */
-    display: flex;
-    justify-content: center;        /* center the text horizontally */
-    align-items: center;
-    flex-direction: column;
+    margin-bottom: 40px;
   }
-
-  /* Slightly smaller irresistible button */
-  .Button.irresistible button {
-    font-size: 2.2rem;              /* scale relative to text */
-    height: 6rem;
-    padding: 0.8rem 1.5rem;
-    max-width: 90%;
-    margin: 0 auto;
-  }
-
 
   .Button button {
     height: 3.6rem;

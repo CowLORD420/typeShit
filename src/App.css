@@ -121,12 +121,19 @@ body::-webkit-scrollbar { width: 0px; background: transparent; }
 
   /* Regular buttons */
   .Button button {
-    width: 100%;      /* force full width of container */
-    min-width: 0;     /* prevents shrinking due to content */
-    max-width: none;  /* ignore max width to unify all buttons */
+    width: 100%;           /* full container width */
+    max-width: 350px;      /* optional max width */
+    min-width: 350px;      /* optional min width */
+    height: 3.6rem;
+    font-size: 1.25rem;
+    padding: 30px;
     box-sizing: border-box;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
+
   /* Irresistible buttons */
   .Button.irresistible button {
     width: 100%;           /* same width as other buttons */

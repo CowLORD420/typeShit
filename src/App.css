@@ -77,4 +77,95 @@ body::-webkit-scrollbar { width: 0px; background: transparent; }
 @media(hover:hover) and (pointer:fine){ .button:hover,.glovo-button:hover{ transform:scale(1.05); box-shadow:0 6px 16px rgba(232,73,166,0.15); background:linear-gradient(135deg,var(--lighter-green),var(--accent)); color: var(--primary); } }
 .sau-text { font-family:'Dancing Script',cursive; font-weight:700; font-size:2rem; color:var(--secondary); display:block; text-align:center; margin:1rem 0; text-shadow:0 0 8px rgba(64,165,120,0.6); }
 
-@media(max-width:768px){ body,html{ } .container{ min-height:95dvh; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:20px; gap:30px; } .question-container{ margin-top:20px;margin-bottom:20px;width:100%; display:flex; flex-direction:column; justify-content:center; align-items:center; } .question{ font-size:2.9em; line-height:1.2; text-align:center; margin:10px 15px 30px; } .buttons,.buttons.single-quiz{ display:flex; flex-direction:column; justify-content:center; align-items:center; width:100%; max-width:500px; gap:25px; } .Button.irresistible button{ font-size:2.2rem; height:auto; min-height:6rem; padding:1.5rem 3rem; width:90%; max-width:350px; display:block; margin:0 auto; text-align:center; box-sizing:border-box; } .Button.irresistible button:hover{ transform:scale(1.08); } .Button.irresistible button:active{ transform:scale(1.03) rotate(-1deg); } .Button button{ height:3.6rem; font-size:1.25rem; padding:30px; } .rezultat{ font-size:1.8em; width:100%; text-shadow:0 0 10px var(--accent); } .result-image{ height:200px; } .Button button:focus,.Button button:active{ outline:none; transform:scale(0.98); box-shadow:0 2px 8px rgba(64,165,120,0.2); background-color: var(--bg-white); color: var(--accent); } }
+@media(max-width:768px){
+  body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    min-height: 95dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 30px;
+  }
+
+  .question-container {
+    margin: 20px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .question {
+    font-size: 2.9em;
+    line-height: 1.2;
+    text-align: center;
+    margin: 10px 15px 30px;
+  }
+
+  .buttons, .buttons.single-quiz {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+  }
+
+  /* Regular buttons */
+  .Button button {
+    width: 100%;           /* full container width */
+    max-width: 350px;      /* optional max width */
+    min-width: 250px;      /* optional min width */
+    height: 3.6rem;
+    font-size: 1.25rem;
+    padding: 30px;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Irresistible buttons */
+  .Button.irresistible button {
+    width: 100%;           /* same width as other buttons */
+    max-width: 350px;
+    min-height: 6rem;
+    font-size: 2.2rem;
+    padding: 1.5rem 3rem;
+    text-align: center;
+    box-sizing: border-box;
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* Result section adjustments */
+  .rezultat {
+    font-size: 1.8em;
+    width: 100%;
+    text-shadow: 0 0 10px var(--accent);
+  }
+
+  .result-image {
+    height: 200px;
+  }
+
+  /* Remove extra outlines or scaling issues */
+  .Button button:focus,
+  .Button button:active {
+    outline: none;
+    transform: scale(0.98);
+    box-shadow: 0 2px 8px rgba(64,165,120,0.2);
+    background-color: var(--bg-white);
+    color: var(--accent);
+  }
+}

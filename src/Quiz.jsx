@@ -20,23 +20,34 @@ function Quiz({ questions, quizType, onRestart }) {
   }, [currentQuestion]);
 
   const handleButtonClick = (choiceIndex) => {
-    setShowingQuestion(false);
+  setShowingQuestion(false);
 
-    setTimeout(() => {
-      setAnswerCounts((prev) => {
-        const updated = [...prev];
-        updated[choiceIndex]++;
-        return updated;
-      });
+  setTimeout(() => {
+    setAnswerCounts((prev) => {
+      const updated = [...prev];
 
-      if (currentQuestion + 1 >= questions.length) {
-        setShowResult(true);
+      // If LAST answer chosen → give +1 to all other answers
+      if (choiceIndex === questions[0].answers.length - 1) {
+        for (let i = 0; i < updated.length; i++) {
+          if (i !== choiceIndex) updated[i] += 1;
+        }
       } else {
-        setCurrentQuestion((prev) => prev + 1);
-        setShowingQuestion(true);
+        // Normal case → increase only selected answer
+        updated[choiceIndex]++;
       }
-    }, 500);
-  };
+
+      return updated;
+    });
+
+    if (currentQuestion + 1 >= questions.length) {
+      setShowResult(true);
+    } else {
+      setCurrentQuestion((prev) => prev + 1);
+      setShowingQuestion(true);
+    }
+  }, 500);
+};
+
 
   const resetQuiz = () => {
     setCurrentQuestion(0);
@@ -53,15 +64,15 @@ function Quiz({ questions, quizType, onRestart }) {
     let resultMessage = "";
 
     if (quizType === "start") {
-      if (mostChosenIndex === 0) resultMessage = "Cupcake Cafea Intensă";
-      else if (mostChosenIndex === 1) resultMessage = "Tort Ciocolată Amară și Zmeură";
-      else if (mostChosenIndex === 2) resultMessage = "Mini Cheesecake";
-      else resultMessage = "Cupcake Măr și Scorțișoară";
+      if (mostChosenIndex === 0) resultMessage = "Mecanică";
+      else if (mostChosenIndex === 1) resultMessage = "3D (Design & Modelare)";
+      else if (mostChosenIndex === 2) resultMessage = "Programare";
+      else resultMessage = "Media";
     }
 
     return (
       <div className="result">
-        <h1 className="question">Rezultatul tău:</h1>
+        <h1 className="question">Departamentul tău este: </h1>
         <h2 className="rezultat">{resultMessage}</h2>
 
         <div className="actions" style={{ marginTop: "2rem" }}>

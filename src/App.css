@@ -110,31 +110,23 @@ body::-webkit-scrollbar { width: 0px; background: transparent; }
     margin: 10px 15px 30px;
   }
 
-  .buttons, .buttons.single-quiz {
-    width: 100%;
-    max-width: 500px;
+   .buttons, .buttons.single-quiz {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
+    align-items: stretch; /* stretch buttons to same width */
+    gap: 20px;
+    width: 100%;
+    max-width: 500px;
   }
 
   /* Regular buttons */
   .Button button {
-    width: 100%;           /* full container width */
-    max-width: 350px;      /* optional max width */
-    min-width: 250px;      /* optional min width */
-    height: 3.6rem;
-    font-size: 1.25rem;
-    padding: 30px;
+    width: 100%;      /* force full width of container */
+    min-width: 0;     /* prevents shrinking due to content */
+    max-width: none;  /* ignore max width to unify all buttons */
     box-sizing: border-box;
     text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
-
   /* Irresistible buttons */
   .Button.irresistible button {
     width: 100%;           /* same width as other buttons */

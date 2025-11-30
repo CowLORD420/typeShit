@@ -419,9 +419,12 @@ body::-webkit-scrollbar {
 
   /* Standard buttons */
   .Button button {
-    height: 3.6rem;
-    font-size: 1.25rem;
-    padding: 30px;
+    width: 100%;           /* fill container */
+    max-width: 100%;       /* no shrinking */
+    height: 4rem;          /* SAME height for all */
+    font-size: 1.35rem;    /* SAME text size */
+    padding: 0;            /* remove uneven padding */
+    box-sizing: border-box;
   }
 
   .rezultat {

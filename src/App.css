@@ -29,7 +29,16 @@ body::-webkit-scrollbar { width: 0px; background: transparent; }
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
 
 /* === Container === */
-.container { min-height: 95dvh; display: flex; flex-direction: column; justify-content: space-around; align-items: center; padding: 30px 20px; box-sizing: border-box; }
+.container {
+  min-height: 0;            /* remove forced viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* center content without extra space */
+  align-items: center;
+  padding: 30px 20px;
+  box-sizing: border-box;
+}
+
 
 /* === Question === */
 .question-container { opacity:0; transform:translateY(-30px); transition: opacity 0.5s ease, transform 0.5s ease; min-height:100px; will-change:opacity, transform; }

@@ -94,7 +94,7 @@ body::-webkit-scrollbar { width: 0px; background: transparent; }
 
   .container {
     min-height: fit-content; /* container fits content */
-    max-height: min-content;
+    max-height: 700px;
     display: flex;
     flex-direction: column;
     justify-content: center;

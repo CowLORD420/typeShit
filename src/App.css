@@ -85,11 +85,12 @@ body::-webkit-scrollbar { width: 0px; background: transparent; }
   }
 
   .container {
-    min-height: 95dvh;
+    min-height: fit-content; /* container fits content */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 20px;
     gap: 30px;
   }
 

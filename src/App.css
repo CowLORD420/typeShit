@@ -87,7 +87,7 @@ body::-webkit-scrollbar { width: 0px; background: transparent; }
 
 @media(max-width:768px){
   body, html {
-    height: 80%;
+    height: 50%;
     margin: 0;
     padding: 0;
   }

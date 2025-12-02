@@ -176,7 +176,7 @@ body::-webkit-scrollbar { width: 0px; background: transparent; }
 }
 
 img {
-  max-width: 25%;
+  max-width: 40%;
   height: auto; /* keeps aspect ratio */
   display: block;
 }

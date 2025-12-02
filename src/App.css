@@ -8,8 +8,8 @@
   --yellow: #E6FF94;
   --primary: #006769;
   --secondary: #40A578;
-  --accent: #9DDE8B;
-  --highlight: #9CDBA6;
+  --accent: #84db6c;
+  --highlight: #88d895;
   --alert: #E6FF94;
   --bg-white: #e9f9ccee;
   --bg-contrast: #C7FFD8; /* new solid background for better contrast */
@@ -167,4 +167,24 @@ body::-webkit-scrollbar { width: 0px; background: transparent; }
     background-color: var(--bg-white);
     color: var(--accent);
   }
+}
+
+.Robot {
+  display: flex;
+  justify-content: center; /* centered horizontally */
+  align-items: center; 
+}
+
+img {
+  max-width: 25%;
+  height: auto; /* keeps aspect ratio */
+  display: block;
+}
+
+.EpsilonText{
+  color: var(--secondary);
+  font-size: 3rem;
+  font-style: bold;
+  font-family: 'Roboto';
+  
 }
